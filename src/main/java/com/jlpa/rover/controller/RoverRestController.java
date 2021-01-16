@@ -57,11 +57,11 @@ public class RoverRestController {
 		}
 	}
 
-	@PutMapping(value = "setGridDimension/{x_Length}/{y_Width}")
+	@PutMapping(value = "setGridDimension/{x_Length}/{y_Length}")
 	public ResponseEntity<Boolean> setGridDimension(@PathVariable(value = "x_Length") Integer x_Length,
-			@PathVariable(value = "y_Width") Integer y_Width) {
+			@PathVariable(value = "y_Length") Integer y_Length) {
 		try {
-			return ResponseEntity.ok(roverService.setGridDimension(x_Length, y_Width));
+			return ResponseEntity.ok(roverService.setGridDimension(x_Length, y_Length));
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

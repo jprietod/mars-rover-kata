@@ -13,7 +13,7 @@ public interface RoverService {
 
 	public Grid getGrid();	
 
-	public Boolean setGridDimension(Integer x_Length, Integer y_Width);
+	public Boolean setGridDimension(Integer x_Length, Integer y_Length);
 
 	public Boolean addObstacleToGrid(Point obstacleLocation);
 

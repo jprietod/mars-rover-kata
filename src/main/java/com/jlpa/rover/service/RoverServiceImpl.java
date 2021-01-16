@@ -50,11 +50,11 @@ public class RoverServiceImpl implements RoverService {
 	}
 
 	@Override
-	public Boolean setGridDimension(Integer x_Length, Integer y_Width) {
+	public Boolean setGridDimension(Integer x_Length, Integer y_Length) {
 		try {
-			if (validateGridChangeWithRover(x_Length, y_Width) && grid != null) {
+			if (validateGridChangeWithRover(x_Length, y_Length) && grid != null) {
 				grid.setX_Length(x_Length);
-				grid.setY_Length(y_Width);
+				grid.setY_Length(y_Length);
 				return true;
 			}
 			return false;
@@ -64,17 +64,17 @@ public class RoverServiceImpl implements RoverService {
 		}
 	}
 
-	private Boolean validateGridChangeWithRover(Integer x_Length, Integer y_Width) {
+	private Boolean validateGridChangeWithRover(Integer x_Length, Integer y_Length) {
 		try {
 			// Validamos que al cambiar el tamaño del grid el rover no queda fuera de los
 			// limites
-			if (x_Length == null || y_Width == null) {
+			if (x_Length == null || y_Length == null) {
 				return false;
 			} else if (rover != null && rover.getLocation() != null && rover.getLocation().getXCoordenate() != null
 					&& rover.getLocation().getXCoordenate() > x_Length)
 				return false;
 			else if (rover != null && rover.getLocation() != null && rover.getLocation().getYCoordenate() != null
-					&& rover.getLocation().getYCoordenate() > y_Width)
+					&& rover.getLocation().getYCoordenate() > y_Length)
 				return false;
 			else
 				return true;
